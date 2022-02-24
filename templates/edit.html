@@ -1,0 +1,21 @@
+
+
+{% block head %}
+<title>Edit</title>
+{% endblock %}
+
+
+{% block body %}
+
+<hr>
+
+<h2>Edit Entry</h2>
+<form action="/posts/edit/{{ post.id }}" method="POST">
+	Title:<input type="text" name="name" id='name' value="{{ post.name }}">
+	<br>
+	Post:<input type="text" name="age" id='age' value="{{ post.age }}">
+	<br>
+	<input type="submit" name="submit" value="Save">
+</form>
+
+{% endblock %}

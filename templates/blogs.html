@@ -1,0 +1,34 @@
+
+
+{% block head %}
+<title>Blogs</title>
+{% endblock %}
+
+
+
+
+
+{% block body %}
+
+<hr>
+<h1>FLASK APP WITH MYSQL</h1>
+<h2>Create New Entry</h2>
+<form action="/posts" method="POST">
+	NAME:<input type="text" name="name" id='name'>
+	<br>
+	AGE:<input type="text" name="age" id='age'>
+	<br>
+	<input type="submit" name="submit" value="Post">
+</form>
+
+
+<hr>
+<h1>your entered data </h1>
+{% for post in posts %}
+<h1>{{ post.name }}</h1>
+<p>{{ post.age }}</p>
+<a href="/posts/delete/{{ post.id }}">Delete</a>
+<a href="/posts/edit/{{ post.id }}">Edit</a>
+<hr>
+{% endfor %}
+{% endblock %}
